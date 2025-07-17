@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أحمد فتحي البسيوني | مشرف موقع</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a3a6c;
+            --secondary-color: #2c5a8d;
+            --accent-color: #f39c12;
+            --light-color: #f5f7fa;
+            --dark-color: #2c3e50;
+            --gray-color: #7f8c8d;
+            --border-color: #e0e6ed;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #f8f9fa;
+            direction: rtl;
+            transition: all 0.3s ease;
+        }
+        
+        body.english {
+            direction: ltr;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+        }
+        
+        /* Summary Section */
+        .summary {
+            background-color: white;
+            padding: 40px 0;
+            margin: 30px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title i {
+            margin-left: 10px;
+            color: var(--accent-color);
+        }
+        
+        /* Experience Section */
+        .experience {
+            background-color: white;
+            padding: 40px 0;
+            margin: 30px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--border-color);
+            top: 0;
+            bottom: 0;
+            right: 50%;
+            margin-right: -2px;
+        }
+        
+        .timeline-item {
+            padding: 15px 40px;
+            position: relative;
+            width: 50%;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            right: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            right: 50%;
+        }
+        
+        .timeline-content {
+            padding: 25px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid var(--accent-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+        }
+        
+        .job-title {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .company {
+            color: var(--secondary-color);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .date {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--accent-color);
+            top: 25px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd)::after {
+            left: -10px;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
+        
+        /* Education & Skills */
+        .education-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .education, .skills {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .skills-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .skill-category {
+            background-color: var(--light-color);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .skill-category h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .skill-category ul {
+            list-style-type: none;
+        }
+        
+        .skill-category li {
+            padding: 8px 0;
+            border-bottom: 1px dashed var(--border-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-category li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            font-size: 1.2rem;
+        }
+        
+        /* Languages */
+        .languages {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            margin: 30px 0;
+        }
+        
+        .language-list {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .language-item {
+            background-color: var(--light-color);
+            padding: 15px 25px;
+            border-radius: 8px;
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            border-bottom: 3px solid var(--accent-color);
+        }
+        
+        .language-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+        
+        /* References */
+        .references {
+            background-color: white;
+            padding: 40px 0;
+            margin: 30px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .reference-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+        
+        .reference-card {
+            background-color: var(--light-color);
+            padding: 25px;
+            border-radius: 8px;
+            border-top: 4px solid var(--secondary-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .reference-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .reference-name {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+        
+        .reference-position {
+            color: var(--secondary-color);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .reference-phone {
+            color: var(--dark-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        
+        .copyright {
+            font-size: 1.1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .timeline::after {
+                right: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-right: 70px;
+                padding-left: 25px;
+                right: 0 !important;
+            }
+            
+            .timeline-item:nth-child(even) {
+                right: 0;
+            }
+            
+            .timeline-item::after {
+                left: 21px !important;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            header h1 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        .print-button {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: 'Tajawal', sans-serif;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .print-button:hover {
+            background-color: #e67e22;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .print-button i {
+            margin-right: 8px;
+        }
+        
+        /* Language Toggle Button */
+        .language-toggle {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: white;
+            color: var(--primary-color);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .language-toggle:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+        }
+        
+        .english .language-toggle {
+            left: auto;
+            right: 20px;
+        }
+        
+        /* Animation for translation */
+        .translated {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0.7; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Toggle Button -->
+    <button class="language-toggle" id="languageToggle">
+        <i class="fas fa-language"></i>
+        <span id="toggleText">English</span>
+    </button>
+
+    <!-- Print Button -->
+    <button class="print-button" onclick="window.print()">
+        <i class="fas fa-print"></i> 
+        <span class="print-text">طباعة السيرة الذاتية</span>
+    </button>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1 class="translatable" data-key="name">أحمد فتحي البسيوني</h1>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span class="translatable" data-key="location">الرياض، المملكة العربية السعودية</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+966 542318503</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>A7MADFATHI@OUTLOOK.SA</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Summary Section -->
+    <section class="summary">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-user-tie"></i><span class="translatable" data-key="summaryTitle">الملف الشخصي</span></h2>
+            <p class="translatable" data-key="summaryText">مشرف موقع بخبرة 5 سنوات في مشاريع تركيب الإضاءة والتكييف في العديد من مدن المملكة العربية السعودية. بدأت مسيرتي كمشرف موقع وتدرجت إلى مسؤول موقع من خلال إثبات المعرفة الفنية القوية والقيادة والالتزام بالجودة. ماهر في إدارة الأنشطة الميدانية، والتنسيق مع المقاولين، وضمان الامتثال لمعايير السلامة والأداء. قادر على إدارة تقارير الموقع اليومية، والإشراف على الفرق، ودعم إنجاز المشاريع بنجاح في ظل جداول زمنية ضيقة.</p>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-briefcase"></i><span class="translatable" data-key="experienceTitle">الخبرة العملية</span></h2>
+            <div class="timeline">
+                <!-- Experience Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 class="job-title translatable" data-key="exp1Title">مشرف موقع - مشاريع إنارة الشوارع (برنامج ترشيد)</h3>
+                        <p class="company translatable" data-key="exp1Company">الباحة 1 | نطاق البلدية | شركة قمة الطرق للمقاولات (مقاول من الباطن لترشيد)</p>
+                        <span class="date translatable" data-key="exp1Date">يونيو 2020 - سبتمبر 2020</span>
+                        <ul>
+                            <li class="translatable" data-key="exp1Desc1">الإشراف على التركيبات اليومية وضمان الامتثال للسلامة من قبل فرق المقاولين من الباطن في مشروع إنارة الشوارع في مشروع الباحة 1.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experience Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 class="job-title translatable" data-key="exp2Title">مشرف موقع - مشاريع إنارة الشوارع (برنامج ترشيد)</h3>
+                        <p class="company translatable" data-key="exp2Company">نجران 1 - نجران 2 | نطاق البلدية | شركة EECC للمقاولات (مقاول من الباطن لفيليبس)</p>
+                        <span class="date translatable" data-key="exp2Date">سبتمبر 2020 - مايو 2021</span>
+                        <ul>
+                            <li class="translatable" data-key="exp2Desc1">عملت كمشرف موقع في مشروع إنارة الشوارع في نجران.</li>
+                            <li class="translatable" data-key="exp2Desc2">تضمن المشروع تركيب وتحديث حوالي 73,000 عمود إنارة واستمر حوالي 7 أشهر.</li>
+                            <li class="translatable" data-key="exp2Desc3">كنت مسؤولاً عن التحقق من جودة العمل، وضمان اتباع قواعد السلامة والمعايير الفنية، وتنظيم المهام اليومية في الموقع والإبلاغ عن التقدم.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experience Item 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 class="job-title translatable" data-key="exp3Title">مشرف موقع - مشاريع إنارة الشوارع (برنامج ترشيد)</h3>
+                        <p class="company translatable" data-key="exp3Company">المدينة المنورة - 2 (البلدية ووزارة النقل) | شركة EECC للمقاولات (مقاول من الباطن لفيليبس)</p>
+                        <span class="date translatable" data-key="exp3Date">يونيو 2021 - ديسمبر 2021</span>
+                        <ul>
+                            <li class="translatable" data-key="exp3Desc1">تضمن المشروع أعمال التركيب تحت إشراف البلدية ووزارة النقل (MOT).</li>
+                            <li class="translatable" data-key="exp3Desc2">كنت مسؤولاً عن الإشراف على الموقع والإبلاغ اليومي عن التقدم للمقاول الرئيسي.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experience Item 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 class="job-title translatable" data-key="exp4Title">مشرف موقع - مشاريع إنارة الشوارع (برنامج ترشيد)</h3>
+                        <p class="company translatable" data-key="exp4Company">جازان - 4 نطاق البلدية | شركة EECC للمقاولات (مقاول من الباطن لشركة البابطين)</p>
+                        <span class="date translatable" data-key="exp4Date">يونيو 2022 - أكتوبر 2023</span>
+                        <ul>
+                            <li class="translatable" data-key="exp4Desc1">تضمن المشروع جرد الإنارة الحالية للشوارع تليها تركيب وحدات LED الجديدة.</li>
+                            <li class="translatable" data-key="exp4Desc2">كنت مسؤولاً بالكامل عن هذا المشروع.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experience Item 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 class="job-title translatable" data-key="exp5Title">مشرف موقع - مشاريع داخلية (برنامج ترشيد)</h3>
+                        <p class="company translatable" data-key="exp5Company">جامعة نجران (UON) | شركة EECC للمقاولات (مقاول من الباطن لشركة ENOVA)</p>
+                        <span class="date translatable" data-key="exp5Date">نوفمبر 2024 - يناير 2025</span>
+                        <ul>
+                            <li class="translatable" data-key="exp5Desc1">تضمن المشروع استبدال أكثر من 220,000 مصباح داخلي و4,000 مصباح شوارع وتركيب أكثر من 500 مستشعر داخل مباني الجامعة.</li>
+                            <li class="translatable" data-key="exp5Desc2">عملت كمشرف تركيب لنصف مدة المشروع.</li>
+                            <li class="translatable" data-key="exp5Desc3">تمت ترقيتي إلى مسؤول موقع للفترة المتبقية، حيث قمت بإدارة عمليات الموقع بأكمله، وتنسيق الفرق، وضمان تسليم المشروع في الوقت المحدد.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experience Item 6 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 class="job-title translatable" data-key="exp6Title">مسؤول موقع - مشاريع داخلية (برنامج ترشيد)</h3>
+                        <p class="company translatable" data-key="exp6Company">جامعة الملك خالد (KKU) | شركة EECC للمقاولات (مقاول من الباطن لشركة ENOVA)</p>
+                        <span class="date translatable" data-key="exp6Date">أغسطس 2024 - يوليو 2025</span>
+                        <ul>
+                            <li class="translatable" data-key="exp6Desc1">تضمن المشروع تركيب حوالي 320,000 مصباح داخلي، وحوالي 3,000 مصباح شوارع داخل الحرم الجامعي، و119 وحدة تكييف منفصلة.</li>
+                            <li class="translatable" data-key="exp6Desc2">مسؤول كامل عن إدارة المشروع في 5 مناطق داخل جامعة الملك خالد.</li>
+                            <li class="translatable" data-key="exp6Desc3">إعداد وتقديم تقارير التقدم للمقاول الرئيسي (ENOVA).</li>
+                            <li class="translatable" data-key="exp6Desc4">التعامل مع إعداد وتقديم الفواتير الشهرية للمقاول الرئيسي، ENOVA.</li>
+                            <li class="translatable" data-key="exp6Desc5">انتهت علاقة العمل مع شركة EECC في 2 يوليو 2025.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experience Item 7 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 class="job-title translatable" data-key="exp7Title">مسؤول موقع - مشاريع داخلية (برنامج ترشيد)</h3>
+                        <p class="company translatable" data-key="exp7Company">إمارة أبها (EOA) | شركة EECC للمقاولات (مقاول من الباطن لشركة ENOVA)</p>
+                        <span class="date translatable" data-key="exp7Date">نوفمبر 2024 - ديسمبر 2024</span>
+                        <ul>
+                            <li class="translatable" data-key="exp7Desc1">تركيب 5 وحدات تكييف منفصلة في مبنى إمارة أبها.</li>
+                            <li class="translatable" data-key="exp7Desc2">كنت مسؤول الموقع، وقمت بتنسيق العمل مع فريق المشروع.</li>
+                            <li class="translatable" data-key="exp7Desc3">مسؤول عن إعداد وتقديم الفواتير الشهرية للمقاول الرئيسي، ENOVA.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experience Item 8 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 class="job-title translatable" data-key="exp8Title">مسؤول موقع - مشاريع داخلية (برنامج ترشيد)</h3>
+                        <p class="company translatable" data-key="exp8Company">جامعة جازان (UOJ) | شركة EECC للمقاولات (مقاول من الباطن لشركة ENOVA)</p>
+                        <span class="date translatable" data-key="exp8Date">فبراير 2025 - يوليو 2025</span>
+                        <ul>
+                            <li class="translatable" data-key="exp8Desc1">تضمن المشروع تركيب وحدات تكييف منفصلة ونوافذ عبر مباني جامعة جازان.</li>
+                            <li class="translatable" data-key="exp8Desc2">كنت مسؤول الموقع حتى 2 يوليو 2025، تم خلالها الانتهاء من أكثر من 80% من عمليات التركيب.</li>
+                            <li class="translatable" data-key="exp8Desc3">التعامل مع إعداد وتقديم الفواتير الشهرية للمقاول الرئيسي، ENOVA.</li>
+                            <li class="translatable" data-key="exp8Desc4">انتهت علاقة العمل مع شركة EECC في 2 يوليو 2025.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Skills Section -->
+    <div class="container education-skills">
+        <!-- Education -->
+        <section class="education">
+            <h2 class="section-title"><i class="fas fa-graduation-cap"></i><span class="translatable" data-key="educationTitle">التعليم</span></h2>
+            <div class="education-item">
+                <h3 class="translatable" data-key="edu1Title">بكالوريوس في القانون (LL.B.)</h3>
+                <p class="translatable" data-key="edu1Desc">كلية القانون، جامعة المنصورة - مصر</p>
+                <p class="date translatable" data-key="edu1Date">تخرج: 2012</p>
+            </div>
+            <div class="education-item" style="margin-top: 20px;">
+                <h3 class="translatable" data-key="edu2Title">دبلوم دراسات عليا في القانون الخاص</h3>
+                <p class="translatable" data-key="edu2Desc">كلية القانون، جامعة المنصورة - مصر</p>
+                <p class="date translatable" data-key="edu2Date">تخرج: 2013</p>
+            </div>
+        </section>
+        
+        <!-- Skills -->
+        <section class="skills">
+            <h2 class="section-title"><i class="fas fa-laptop-code"></i><span class="translatable" data-key="skillsTitle">المهارات</span></h2>
+            <div class="skills-categories">
+                <div class="skill-category">
+                    <h4 class="translatable" data-key="skillCat1">إدارة المشاريع والعمليات</h4>
+                    <ul>
+                        <li class="translatable" data-key="skill1">تخطيط العمل والإدارة اليومية للفريق</li>
+                        <li class="translatable" data-key="skill2">مراقبة الجودة والامتثال للسلامة</li>
+                        <li class="translatable" data-key="skill3">تنسيق المقاولين من الباطن</li>
+                        <li class="translatable" data-key="skill4">الإبلاغ ومتابعة التقدم</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h4 class="translatable" data-key="skillCat2">المهارات الفنية والرقمية</h4>
+                    <ul>
+                        <li class="translatable" data-key="skill5">Microsoft Excel (متقدم)، PowerPoint</li>
+                        <li class="translatable" data-key="skill6">AutoCAD</li>
+                        <li class="translatable" data-key="skill7">Google Workspace (مستندات، جداول، محرك الأقراص)</li>
+                        <li class="translatable" data-key="skill8">Microsoft Project / Primavera P6</li>
+                        <li class="translatable" data-key="skill9">منصة AppSheet</li>
+                        <li class="translatable" data-key="skill10">Zoho Creator & Zoho Portal و Zoho Projects</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h4 class="translatable" data-key="skillCat3">المهارات التعاقدية والإدارية</h4>
+                    <ul>
+                        <li class="translatable" data-key="skill11">إعداد وإرسال التقارير اليومية</li>
+                        <li class="translatable" data-key="skill12">تقديم الفواتير الشهرية بناءً على الكميات المثبتة</li>
+                        <li class="translatable" data-key="skill13">وضع الخطط اليومية لفرق العمل في الموقع</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h4 class="translatable" data-key="skillCat4">المهارات الشخصية</h4>
+                    <ul>
+                        <li class="translatable" data-key="skill14">القيادة والإشراف على الفريق</li>
+                        <li class="translatable" data-key="skill15">حل المشكلات</li>
+                        <li class="translatable" data-key="skill16">التواصل مع العملاء</li>
+                        <li class="translatable" data-key="skill17">إدارة الوقت</li>
+                        <li class="translatable" data-key="skill18">القدرة على التكيف تحت الضغط</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Languages Section -->
+    <section class="languages">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-language"></i><span class="translatable" data-key="languagesTitle">اللغات</span></h2>
+            <div class="language-list">
+                <div class="language-item">
+                    <h4 class="translatable" data-key="lang1">العربية</h4>
+                    <p class="translatable" data-key="lang1Level">اللغة الأم</p>
+                </div>
+                <div class="language-item">
+                    <h4 class="translatable" data-key="lang2">الإنجليزية</h4>
+                    <p class="translatable" data-key="lang2Level">كفاءة عمل جيدة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- References Section -->
+    <section class="references">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-users"></i><span class="translatable" data-key="referencesTitle">المراجع</span></h2>
+            <div class="reference-grid">
+                <!-- Reference 1 -->
+                <div class="reference-card">
+                    <h3 class="reference-name translatable" data-key="ref1Name">م. محمد أبو كبير</h3>
+                    <p class="reference-position translatable" data-key="ref1Position">مدير مشاريع سابق - EECC</p>
+                    <p class="reference-phone"><i class="fas fa-phone"></i> +966 593289997</p>
+                </div>
+                
+                <!-- Reference 2 -->
+                <div class="reference-card">
+                    <h3 class="reference-name translatable" data-key="ref2Name">م. هاني فارس</h3>
+                    <p class="reference-position translatable" data-key="ref2Position">مدير مشاريع سابق - EECC</p>
+                    <p class="reference-phone"><i class="fas fa-phone"></i> +966 548005289</p>
+                </div>
+                
+                <!-- Reference 3 -->
+                <div class="reference-card">
+                    <h3 class="reference-name translatable" data-key="ref3Name">م. محمود العبور</h3>
+                    <p class="reference-position translatable" data-key="ref3Position">مدير مشاريع سابق - EECC</p>
+                    <p class="reference-phone"><i class="fas fa-phone"></i> +966 591200093</p>
+                </div>
+                
+                <!-- Reference 4 -->
+                <div class="reference-card">
+                    <h3 class="reference-name translatable" data-key="ref4Name">م. ماهر عجور</h3>
+                    <p class="reference-position translatable" data-key="ref4Position">مدير مشاريع - شركة فيليبس</p>
+                    <p class="reference-phone"><i class="fas fa-phone"></i> +966 555928350</p>
+                </div>
+                
+                <!-- Reference 5 -->
+                <div class="reference-card">
+                    <h3 class="reference-name translatable" data-key="ref5Name">م. حسام السيد سليمان</h3>
+                    <p class="reference-position translatable" data-key="ref5Position">مدير مشاريع - شركة البابطين</p>
+                    <p class="reference-phone"><i class="fas fa-phone"></i> +966 538416476</p>
+                </div>
+                
+                <!-- Reference 6 -->
+                <div class="reference-card">
+                    <h3 class="reference-name translatable" data-key="ref6Name">م. إسلام الششتاوي</h3>
+                    <p class="reference-position translatable" data-key="ref6Position">مدير مشاريع - شركة Enova</p>
+                    <p class="reference-phone"><i class="fas fa-phone"></i> +966 565875022</p>
+                </div>
+                
+                <!-- Reference 7 -->
+                <div class="reference-card">
+                    <h3 class="reference-name translatable" data-key="ref7Name">م. مؤيد سلامة</h3>
+                    <p class="reference-position translatable" data-key="ref7Position">مدير مشاريع - شركة Enova</p>
+                    <p class="reference-phone"><i class="fas fa-phone"></i> +966 536185255</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="copyright translatable" data-key="copyright">© 2025 أحمد فتحي البسيوني - السيرة الذاتية</p>
+        </div>
+    </footer>
+
+    <script>
+        // Translation data
+        const translations = {
+            ar: {
+                toggleText: "English",
+                name: "أحمد فتحي البسيوني",
+                location: "الرياض، المملكة العربية السعودية",
+                summaryTitle: "الملف الشخصي",
+                summaryText: "مشرف موقع بخبرة 5 سنوات في مشاريع تركيب الإضاءة والتكييف في العديد من مدن المملكة العربية السعودية. بدأت مسيرتي كمشرف موقع وتدرجت إلى مسؤول موقع من خلال إثبات المعرفة الفنية القوية والقيادة والالتزام بالجودة. ماهر في إدارة الأنشطة الميدانية، والتنسيق مع المقاولين، وضمان الامتثال لمعايير السلامة والأداء. قادر على إدارة تقارير الموقع اليومية، والإشراف على الفرق، ودعم إنجاز المشاريع بنجاح في ظل جداول زمنية ضيقة.",
+                experienceTitle: "الخبرة العملية",
+                exp1Title: "مشرف موقع - مشاريع إنارة الشوارع (برنامج ترشيد)",
+                exp1Company: "الباحة 1 | نطاق البلدية | شركة قمة الطرق للمقاولات (مقاول من الباطن لترشيد)",
+                exp1Date: "يونيو 2020 - سبتمبر 2020",
+                exp1Desc1: "الإشراف على التركيبات اليومية وضمان الامتثال للسلامة من قبل فرق المقاولين من الباطن في مشروع إنارة الشوارع في مشروع الباحة 1.",
+                exp2Title: "مشرف موقع - مشاريع إنارة الشوارع (برنامج ترشيد)",
+                exp2Company: "نجران 1 - نجران 2 | نطاق البلدية | شركة EECC للمقاولات (مقاول من الباطن لفيليبس)",
+                exp2Date: "سبتمبر 2020 - مايو 2021",
+                exp2Desc1: "عملت كمشرف موقع في مشروع إنارة الشوارع في نجران.",
+                exp2Desc2: "تضمن المشروع تركيب وتحديث حوالي 73,000 عمود إنارة واستمر حوالي 7 أشهر.",
+                exp2Desc3: "كنت مسؤولاً عن التحقق من جودة العمل، وضمان اتباع قواعد السلامة والمعايير الفنية، وتنظيم المهام اليومية في الموقع والإبلاغ عن التقدم.",
+                exp3Title: "مشرف موقع - مشاريع إنارة الشوارع (برنامج ترشيد)",
+                exp3Company: "المدينة المنورة - 2 (البلدية ووزارة النقل) | شركة EECC للمقاولات (مقاول من الباطن لفيليبس)",
+                exp3Date: "يونيو 2021 - ديسمبر 2021",
+                exp3Desc1: "تضمن المشروع أعمال التركيب تحت إشراف البلدية ووزارة النقل (MOT).",
+                exp3Desc2: "كنت مسؤولاً عن الإشراف على الموقع والإبلاغ اليومي عن التقدم للمقاول الرئيسي.",
+                exp4Title: "مشرف موقع - مشاريع إنارة الشوارع (برنامج ترشيد)",
+                exp4Company: "جازان - 4 نطاق البلدية | شركة EECC للمقاولات (مقاول من الباطن لشركة البابطين)",
+                exp4Date: "يونيو 2022 - أكتوبر 2023",
+                exp4Desc1: "تضمن المشروع جرد الإنارة الحالية للشوارع تليها تركيب وحدات LED الجديدة.",
+                exp4Desc2: "كنت مسؤولاً بالكامل عن هذا المشروع.",
+                exp5Title: "مشرف موقع - مشاريع داخلية (برنامج ترشيد)",
+                exp5Company: "جامعة نجران (UON) | شركة EECC للمقاولات (مقاول من الباطن لشركة ENOVA)",
+                exp5Date: "نوفمبر 2024 - يناير 2025",
+                exp5Desc1: "تضمن المشروع استبدال أكثر من 220,000 مصباح داخلي و4,000 مصباح شوارع وتركيب أكثر من 500 مستشعر داخل مباني الجامعة.",
+                exp5Desc2: "عملت كمشرف تركيب لنصف مدة المشروع.",
+                exp5Desc3: "تمت ترقيتي إلى مسؤول موقع للفترة المتبقية، حيث قمت بإدارة عمليات الموقع بأكمله، وتنسيق الفرق، وضمان تسليم المشروع في الوقت المحدد.",
+                exp6Title: "مسؤول موقع - مشاريع داخلية (برنامج ترشيد)",
+                exp6Company: "جامعة الملك خالد (KKU) | شركة EECC للمقاولات (مقاول من الباطن لشركة ENOVA)",
+                exp6Date: "أغسطس 2024 - يوليو 2025",
+                exp6Desc1: "تضمن المشروع تركيب حوالي 320,000 مصباح داخلي، وحوالي 3,000 مصباح شوارع داخل الحرم الجامعي، و119 وحدة تكييف منفصلة.",
+                exp6Desc2: "مسؤول كامل عن إدارة المشروع في 5 مناطق داخل جامعة الملك خالد.",
+                exp6Desc3: "إعداد وتقديم تقارير التقدم للمقاول الرئيسي (ENOVA).",
+                exp6Desc4: "التعامل مع إعداد وتقديم الفواتير الشهرية للمقاول الرئيسي، ENOVA.",
+                exp6Desc5: "انتهت علاقة العمل مع شركة EECC في 2 يوليو 2025.",
+                exp7Title: "مسؤول موقع - مشاريع داخلية (برنامج ترشيد)",
+                exp7Company: "إمارة أبها (EOA) | شركة EECC للمقاولات (مقاول من الباطن لشركة ENOVA)",
+                exp7Date: "نوفمبر 2024 - ديسمبر 2024",
+                exp7Desc1: "تركيب 5 وحدات تكييف منفصلة في مبنى إمارة أبها.",
+                exp7Desc2: "كنت مسؤول الموقع، وقمت بتنسيق العمل مع فريق المشروع.",
+                exp7Desc3: "مسؤول عن إعداد وتقديم الفواتير الشهرية للمقاول الرئيسي، ENOVA.",
+                exp8Title: "مسؤول موقع - مشاريع داخلية (برنامج ترشيد)",
+                exp8Company: "جامعة جازان (UOJ) | شركة EECC للمقاولات (مقاول من الباطن لشركة ENOVA)",
+                exp8Date: "فبراير 2025 - يوليو 2025",
+                exp8Desc1: "تضمن المشروع تركيب وحدات تكييف منفصلة ونوافذ عبر مباني جامعة جازان.",
+                exp8Desc2: "كنت مسؤول الموقع حتى 2 يوليو 2025، تم خلالها الانتهاء من أكثر من 80% من عمليات التركيب.",
+                exp8Desc3: "التعامل مع إعداد وتقديم الفواتير الشهرية للمقاول الرئيسي، ENOVA.",
+                exp8Desc4: "انتهت علاقة العمل مع شركة EECC في 2 يوليو 2025.",
+                educationTitle: "التعليم",
+                edu1Title: "بكالوريوس في القانون (LL.B.)",
+                edu1Desc: "كلية القانون، جامعة المنصورة - مصر",
+                edu1Date: "تخرج: 2012",
+                edu2Title: "دبلوم دراسات عليا في القانون الخاص",
+                edu2Desc: "كلية القانون، جامعة المنصورة - مصر",
+                edu2Date: "تخرج: 2013",
+                skillsTitle: "المهارات",
+                skillCat1: "إدارة المشاريع والعمليات",
+                skill1: "تخطيط العمل والإدارة اليومية للفريق",
+                skill2: "مراقبة الجودة والامتثال للسلامة",
+                skill3: "تنسيق المقاولين من الباطن",
+                skill4: "الإبلاغ ومتابعة التقدم",
+                skillCat2: "المهارات الفنية والرقمية",
+                skill5: "Microsoft Excel (متقدم)، PowerPoint",
+                skill6: "AutoCAD",
+                skill7: "Google Workspace (مستندات، جداول، محرك الأقراص)",
+                skill8: "Microsoft Project / Primavera P6",
+                skill9: "منصة AppSheet",
+                skill10: "Zoho Creator & Zoho Portal و Zoho Projects",
+                skillCat3: "المهارات التعاقدية والإدارية",
+                skill11: "إعداد وإرسال التقارير اليومية",
+                skill12: "تقديم الفواتير الشهرية بناءً على الكميات المثبتة",
+                skill13: "وضع الخطط اليومية لفرق العمل في الموقع",
+                skillCat4: "المهارات الشخصية",
+                skill14: "القيادة والإشراف على الفريق",
+                skill15: "حل المشكلات",
+                skill16: "التواصل مع العملاء",
+                skill17: "إدارة الوقت",
+                skill18: "القدرة على التكيف تحت الضغط",
+                languagesTitle: "اللغات",
+                lang1: "العربية",
+                lang1Level: "اللغة الأم",
+                lang2: "الإنجليزية",
+                lang2Level: "كفاءة عمل جيدة",
+                referencesTitle: "المراجع",
+                ref1Name: "م. محمد أبو كبير",
+                ref1Position: "مدير مشاريع سابق - EECC",
+                ref2Name: "م. هاني فارس",
+                ref2Position: "مدير مشاريع سابق - EECC",
+                ref3Name: "م. محمود العبور",
+                ref3Position: "مدير مشاريع سابق - EECC",
+                ref4Name: "م. ماهر عجور",
+                ref4Position: "مدير مشاريع - شركة فيليبس",
+                ref5Name: "م. حسام السيد سليمان",
+                ref5Position: "مدير مشاريع - شركة البابطين",
+                ref6Name: "م. إسلام الششتاوي",
+                ref6Position: "مدير مشاريع - شركة Enova",
+                ref7Name: "م. مؤيد سلامة",
+                ref7Position: "مدير مشاريع - شركة Enova",
+                copyright: "© 2025 أحمد فتحي البسيوني - السيرة الذاتية",
+                printText: "طباعة السيرة الذاتية"
+            },
+            en: {
+                toggleText: "العربية",
+                name: "AHMAD FATHI AL-BASUONY",
+                location: "RIYADH, SAUDI ARABIA",
+                summaryTitle: "Professional Summary",
+                summaryText: "Site Supervisor with 5 years of progressive experience in lighting and AC installation projects across many cities in Saudi Arabia. I started as a Site Supervisor and advanced to Site In-Charge by demonstrating strong technical knowledge, leadership, and commitment to quality. Skilled in managing on-site activities, coordinating with contractors, and ensuring compliance with safety and performance standards. Adept at handling daily site reports, supervising teams, and supporting successful project delivery under tight schedules.",
+                experienceTitle: "Work Experience",
+                exp1Title: "Site Supervisor – Street Lighting Projects (Tarsheed Program)",
+                exp1Company: "Al-Baha 1 | Municipality scope | Qimmat Al-Toroq Contracting Est. (Subcontractor to Tarsheed)",
+                exp1Date: "June 2020 - September 2020",
+                exp1Desc1: "Supervised daily installations and ensured safety compliance by subcontractor teams on a street lighting project in Al Baha 1 project.",
+                exp2Title: "Site Supervisor – Street Light Projects (Tarsheed Program)",
+                exp2Company: "Najran 1 – Najran 2 | Municipality scope | EECC Contracting Est. (Subcontractor to Philips)",
+                exp2Date: "September 2020 - May 2021",
+                exp2Desc1: "Worked as a Site Supervisor on a street lighting project in Najran.",
+                exp2Desc2: "The project included installing and upgrading about 73,000 streetlights and lasted about 7 months.",
+                exp2Desc3: "Responsible for checking the quality of work, ensuring safety rules and technical standards were followed, and organizing daily site tasks and reporting progress.",
+                exp3Title: "Site Supervisor – Street Light Projects (Tarsheed Program)",
+                exp3Company: "Madina - 2 (Municipality and MOT) | EECC Contracting Est. (Subcontractor to Philips)",
+                exp3Date: "June 2021 - December 2021",
+                exp3Desc1: "The project included installation work under the municipality and Ministry of Transport (MOT).",
+                exp3Desc2: "Responsible for site supervision and daily progress reporting to the main contractor.",
+                exp4Title: "Site Supervisor – Street Light Projects (Tarsheed Program)",
+                exp4Company: "Jazan – 4 Municipality scope | EECC Contracting Est. (Subcontractor to Al Babtain)",
+                exp4Date: "June 2022 - October 2023",
+                exp4Desc1: "The project included inventory of existing street lighting followed by installing the new Led.",
+                exp4Desc2: "Fully responsible for this project.",
+                exp5Title: "Site Supervisor – Indoor Projects (Tarsheed Program)",
+                exp5Company: "Najran University (UON) | EECC Contracting Est. (Subcontractor to ENOVA)",
+                exp5Date: "November 2024 - January 2025",
+                exp5Desc1: "The project involved replacing over 220,000 indoor lamps, 4,000 street lights, and installing more than 500 sensors inside university buildings.",
+                exp5Desc2: "Worked as an installation Supervisor for half of the project duration.",
+                exp5Desc3: "Promoted to Site In-Charge for the remaining period, managing the entire site operations, coordinating teams, and ensuring timely project delivery.",
+                exp6Title: "Site in-charge – Indoor Projects (Tarsheed Program)",
+                exp6Company: "King Khaled University (KKU) | EECC Contracting Est. (Subcontractor to ENOVA)",
+                exp6Date: "August 2024 - July 2025",
+                exp6Desc1: "The project involved the installation of around 320,000 indoor lamps, around 3,000 streetlights within the university campus, and 119 split air conditioning units.",
+                exp6Desc2: "Fully responsible for managing the project across 5 zones within King Khalid University.",
+                exp6Desc3: "Prepared and submitted progress reports to the main contractor (ENOVA).",
+                exp6Desc4: "Handled the preparation and submission of monthly invoices to the main contractor, ENOVA.",
+                exp6Desc5: "Ended employment with the EECC company on July 2, 2025.",
+                exp7Title: "Site in-charge – Indoor Projects (Tarsheed Program)",
+                exp7Company: "Emarat of Abha (EOA) | EECC Contracting Est. (Subcontractor to ENOVA)",
+                exp7Date: "November 2024 - December 2024",
+                exp7Desc1: "Installed 5 split AC units at the Emarat of Abha building.",
+                exp7Desc2: "Worked as the site In-Charge, coordinating with the project team.",
+                exp7Desc3: "Responsible for preparing and submitting monthly invoices to the main contractor, ENOVA.",
+                exp8Title: "Site in-charge – Indoor Projects (Tarsheed Program)",
+                exp8Company: "Jizan University (UOJ) | EECC Contracting Est. (Subcontractor to ENOVA)",
+                exp8Date: "February 2025 - July 2025",
+                exp8Desc1: "The project included the installation of split and window AC units across Jazan University buildings.",
+                exp8Desc2: "Worked as a site In-Charge until July 2, 2025, during which over 80% of the installations were completed.",
+                exp8Desc3: "Handled the preparation and submission of monthly invoices to the main contractor, ENOVA.",
+                exp8Desc4: "Ended employment with the EECC company on July 2, 2025.",
+                educationTitle: "Education",
+                edu1Title: "Bachelor of Law (LL.B.)",
+                edu1Desc: "Faculty of Law, Mansoura University – Egypt",
+                edu1Date: "Graduated: 2012",
+                edu2Title: "Postgraduate Diploma in Private Law",
+                edu2Desc: "Faculty of Law, Mansoura University – Egypt",
+                edu2Date: "Graduated: 2013",
+                skillsTitle: "Skills",
+                skillCat1: "Project Management & Operations",
+                skill1: "Work Planning and Daily Team Management",
+                skill2: "Quality Control & Safety Compliance",
+                skill3: "Subcontractor Coordination",
+                skill4: "Reporting & Progress Tracking",
+                skillCat2: "Technical & Digital Skills",
+                skill5: "Microsoft Excel (Advanced), PowerPoint",
+                skill6: "AutoCAD",
+                skill7: "Google Workspace (Docs, Sheets, Drive)",
+                skill8: "Microsoft Project / Primavera P6",
+                skill9: "AppSheet Platform",
+                skill10: "Zoho Creator & Zoho Portal and Zoho Projects",
+                skillCat3: "Contractual & Admin Skills",
+                skill11: "Preparing and sending Daily Reports",
+                skill12: "Submitting Monthly Invoices based on quantities installed",
+                skill13: "Setting Daily Work Plans for site teams",
+                skillCat4: "Soft Skills",
+                skill14: "Leadership & Team Supervision",
+                skill15: "Problem Solving",
+                skill16: "Client Communication",
+                skill17: "Time Management",
+                skill18: "Adaptability under Pressure",
+                languagesTitle: "Languages",
+                lang1: "Arabic",
+                lang1Level: "Native",
+                lang2: "English",
+                lang2Level: "Good working proficiency",
+                referencesTitle: "References",
+                ref1Name: "Eng. Mohamed Abu Kabeir",
+                ref1Position: "Projects director - Former EECC",
+                ref2Name: "Eng. Hani Faris",
+                ref2Position: "Project manager - Former EECC",
+                ref3Name: "Eng. Mahmoud Al-Abour",
+                ref3Position: "Project manager - Former EECC",
+                ref4Name: "Eng. Maher Ajour",
+                ref4Position: "Projects director - Philips Company",
+                ref5Name: "Eng. Hossam El-Sayed Suleiman",
+                ref5Position: "Project manager - Al Babtain Company",
+                ref6Name: "Eng. Islam El-Shishtawy",
+                ref6Position: "Project manager - Enova Company",
+                ref7Name: "Eng. Moayyad Salama",
+                ref7Position: "Project manager - Enova Company",
+                copyright: "© 2025 AHMAD FATHI AL-BASUONY - CV",
+                printText: "Print Resume"
+            }
+        };
+
+        // Get language toggle button and elements to translate
+        const toggleBtn = document.getElementById('languageToggle');
+        const toggleText = document.getElementById('toggleText');
+        const translatableElements = document.querySelectorAll('.translatable');
+        const printText = document.querySelector('.print-text');
+
+        // Check saved language preference
+        let currentLang = localStorage.getItem('language') || 'ar';
+        
+        // Apply language on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            translatePage(currentLang);
+            updateDirection(currentLang);
+        });
+
+        // Toggle language on button click
+        toggleBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            localStorage.setItem('language', currentLang);
+            translatePage(currentLang);
+            updateDirection(currentLang);
+        });
+
+        // Translate the page
+        function translatePage(lang) {
+            translatableElements.forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            toggleText.textContent = translations[lang].toggleText;
+            printText.textContent = translations[lang].printText;
+            
+            // Add animation effect
+            document.body.classList.add('translated');
+            setTimeout(() => {
+                document.body.classList.remove('translated');
+            }, 500);
+        }
+
+        // Update page direction based on language
+        function updateDirection(lang) {
+            if (lang === 'en') {
+                document.body.classList.add('english');
+                document.documentElement.setAttribute('dir', 'ltr');
+            } else {
+                document.body.classList.remove('english');
+                document.documentElement.setAttribute('dir', 'rtl');
+            }
+        }
+    </script>
+</body>
+</html>
